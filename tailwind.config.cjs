@@ -21,7 +21,9 @@ module.exports = {
       'green-light': '#38E4AE',
 
       blue: '#0b3d91',
-      'blue-semi-light': '#1056D1'
+      'blue-semi-light': '#1056D1',
+
+      red: '#FF4747',
     },
     fontSize: {
       xs: 14,

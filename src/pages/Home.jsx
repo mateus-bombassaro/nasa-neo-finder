@@ -5,6 +5,8 @@ import { Logo } from "../Logo";
 import { getNasaList } from '../api/nasaApi';
 import { useState } from "react";
 import { NeosGrid } from '../components/NeosGrid';
+import { getDateDiff } from "../services/dateService";
+import { Text } from '../components/Text';
 
 export function Home() {
 
@@ -12,15 +14,28 @@ export function Home() {
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
 
+  const [isLoading, setIsLoading] = useState(false);
+
   function searchData(event) {
     event?.preventDefault()
+    setIsLoading(true);
+    setNeosList([]);
+
+    if (getDateDiff(startDate, endDate) > 7) {
+      window.alert('Por favor, selecione um período de no máximo sete dias.');
+      return;
+    }
+
     getNasaList(startDate, endDate)
       .then((response) => setNeosList(response))
-      .catch(() => window.alert('Não foi possível buscar as informações :(. Tente mais tarde.'));
+      .catch(() => window.alert('Não foi possível buscar as informações :(. Tente mais tarde.'))
+      .finally(() => setIsLoading(false));
+    
+
   }
 
   return (
-    <div className="w-screen h-screen bg-gray-light flex flex-col items-center">
+    <div className="w-full h-full min-h-screen bg-gray-light flex flex-col items-center">
       <header className="flex flex-col items-center mt-16">
         <Logo />
         <Heading size="lg" className="mt-4">NASA Near Earth Objects Finder</Heading>
@@ -32,12 +47,12 @@ export function Home() {
         <Button type="submit" className='ml-4'>Filtrar</Button>
       </form>
 
+      {isLoading ? <Text className='animate-pulse mt-4'>Aguarde, estamos buscando as informações...</Text> : ''}
+
       {Object.keys(neosList).map((neosDay, index) => (
         <NeosGrid key={index} neosDay={neosDay} neosByDayList={neosList[neosDay]} />
-      )) }
-      {
-        neosList[0]
-      }
+      ))}
+      
     </div>
   )
 }

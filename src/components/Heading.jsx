@@ -3,9 +3,9 @@ import { clsx } from 'clsx';
 export function Heading({size = 'md', children, className}) { 
   return (
     <h1 className={clsx('font-bold font-sans', {
-      'text-lg': size === 'sm',
-      'text-xl': size === 'md',
-      'text-2xl': size === 'lg',
+      'text-md': size === 'sm',
+      'text-lg': size === 'md',
+      'text-xl': size === 'lg',
     },
     className)}>
       { children }

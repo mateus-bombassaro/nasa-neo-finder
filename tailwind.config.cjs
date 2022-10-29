@@ -27,12 +27,10 @@ module.exports = {
       red: '#FF4747',
     },
     fontSize: {
-      xs: 14,
       sm: 16,
       md: 18,
       lg: 20,
-      xl: 24,
-      '2xl': 32,
+      xl: 32,
     },
     extend: {
       fontFamily: {

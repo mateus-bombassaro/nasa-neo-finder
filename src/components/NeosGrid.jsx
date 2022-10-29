@@ -1,11 +1,11 @@
 import { Heading } from '../components/Heading';
-import { dateFormat } from '../services/dateService';
+import { getFormattedDate } from '../services/dateService';
 import { Text } from '../components/Text';
 
 export function NeosGrid({ neosByDayList, neosDay }) {
 
   function getDateFormat() {
-    return dateFormat(neosDay);
+    return getFormattedDate(neosDay);
   }
 
   function getDiameter(neo) {

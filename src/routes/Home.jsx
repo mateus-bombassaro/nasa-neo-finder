@@ -1,7 +1,7 @@
 import { Button } from "../components/Button";
 import { DateInput } from "../components/DateInput";
 import { Heading } from "../components/Heading";
-import { Logo } from "../Logo";
+import { Logo } from "../components/Logo";
 import { getNasaList } from '../api/nasaApi';
 import { useState } from "react";
 import { NeosGrid } from '../components/NeosGrid';

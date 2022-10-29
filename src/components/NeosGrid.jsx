@@ -16,8 +16,12 @@ export function NeosGrid({ neosByDayList, neosDay }) {
     return neo.is_potentially_hazardous_asteroid ? <Text className='text-red font-semibold'>Potencialmente perigoso</Text> : '';
   }
 
-    function getIsSentryObject(neo) {
+  function getIsSentryObject(neo) {
     return neo.is_sentry_object ? <Text className='text-blue font-semibold'>Objeto sentinela</Text> : '';
+  }
+
+  function onClickNeo(neo) {
+    window.alert(`Você clickou no NEO: ${neo.name}`)
   }
 
   return (
@@ -26,7 +30,7 @@ export function NeosGrid({ neosByDayList, neosDay }) {
       <div className='grid grid-cols-4 gap-4 md:grid-cols-2 lg:grid-cols-4'>
         {neosByDayList.map((neo, key) => {
           return (
-            <div className='flex flex-col px-3 rounded border-solid border-1 bg-white border-gray' key={key}>
+            <div onClick={() => onClickNeo(neo)} className='flex flex-col px-3 bg-white cursor-pointer' key={key}>
               <Heading size="sm" className='text-gray-dark border-b-2 border-dotted border-gray-semi-light mb-2 pb-1'>{neo.name}</Heading>
               <Text className='text-gray'>ID: {neo.id}</Text>
               <Text>Magnitude: {neo.absolute_magnitude_h}</Text>

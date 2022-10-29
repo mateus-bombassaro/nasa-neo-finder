@@ -1,8 +1,5 @@
 import { clsx } from 'clsx';
 
-
-
-
 export function Heading({size = 'md', children, className}) { 
   return (
     <h1 className={clsx('font-bold font-sans', {

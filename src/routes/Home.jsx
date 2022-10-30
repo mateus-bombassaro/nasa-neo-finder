@@ -18,14 +18,20 @@ export function Home() {
 
   function searchData(event) {
     event?.preventDefault()
-    setIsLoading(true);
+
     setNeosList([]);
+
+    if (!startDate || !endDate) {
+      window.alert('Por favor, selecione as datas inicial e final do período.');
+      return;
+    }
 
     if (getDateDiff(startDate, endDate) > 7) {
       window.alert('Por favor, selecione um período de no máximo sete dias.');
       return;
     }
 
+    setIsLoading(true);
     getNasaList(startDate, endDate)
       .then((response) => setNeosList(response))
       .catch(() => window.alert('Não foi possível buscar as informações :(. Tente mais tarde.'))

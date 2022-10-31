@@ -26,7 +26,7 @@ export function Home() {
       return;
     }
 
-    if (getDateDiff(startDate, endDate) > 7) {
+    if (getDateDiff(startDate, endDate) > 7 || getDateDiff(startDate, endDate) < -7) {
       window.alert('Por favor, selecione um período de no máximo sete dias.');
       return;
     }

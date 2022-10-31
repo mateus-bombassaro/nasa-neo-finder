@@ -27,11 +27,13 @@ export function NeosGrid({ neosByDayList, neosDay }) {
   return (
     <div className="w-full px-16 py-8">
       <Heading id="neos-date" className="text-gray">Data: {getDateFormat()}</Heading>
-      <div className='grid grid-cols-4 gap-4 md:grid-cols-2 lg:grid-cols-4'>
+      <div className='grid grid-cols-4 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
         {neosByDayList.map((neo, key) => {
           return (
-            <div id="neo" onClick={() => onClickNeo(neo)} className='flex flex-col p-3 bg-white cursor-pointer' key={key}>
-              <Heading className='text-gray-dark border-b-2 border-dotted border-gray-semi-light mb-2 pb-1'>{neo.name}</Heading>
+            <div id="neo" className='flex flex-col p-3 bg-white' key={key}>
+              <div onClick={() => onClickNeo(neo)}>
+                <Heading  className='text-gray-dark border-b-2 border-dotted border-gray-semi-light mb-2 pb-1 cursor-pointer'>{neo.name}</Heading>
+              </div>
               <Text className='text-gray'>ID: {neo.id}</Text>
               <Text>Magnitude: {neo.absolute_magnitude_h}</Text>
               <Text>Diâmetro estimado (Km): {getDiameter(neo)}</Text>

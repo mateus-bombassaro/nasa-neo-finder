@@ -2,7 +2,7 @@
 
 Esse projeto trata-se de uma aplicação SPA desenvolvida em React que possui como objetivo a exibição de NEOs(Near Earth Objects). Esses objetos são consultados em uma [API](https://api.nasa.gov/) que considera um filtro de período para a busca dos dados.
 
-A configuração inicial do projeto foi feita utilizando a ferramenta Vite.js. A escolha deu-se pela recomendação feita na documentação do [TailwindCSS](https://tailwindcss.com/), um framework css utilizado na implementação dessa aplicação.
+A configuração inicial do projeto foi feita utilizando a ferramenta Vite.js. A escolha deu-se pela recomendação feita na documentação do [TailwindCSS](https://tailwindcss.com/), framework CSS usado na composição de estilos da aplicação.
 
 Além disso, algumas outras bibliotecas foram usadas neste projeto, como o `moment` para manipuação de datas, `axios` para requisições http, `clsx` para a aplicação de classes condicionais em componentes, `react-router-dom` para gerenciamento de rotas e a biblioteca `jest` para o desenvolvimento de testes unitários.
 
@@ -27,3 +27,6 @@ npm run dev
 ## Para rodar os testes:
 
 `npm run test`
+
+## Para acessar na WEB
+[NASA NEO Finder React APP](https://nasa-neo-finder.surge.sh/)

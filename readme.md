@@ -28,5 +28,5 @@ npm run dev
 
 `npm run test`
 
-## Para acessar na WEB
+## Para acessar na WEB:
 [NASA NEO Finder React APP](https://nasa-neo-finder.surge.sh/)

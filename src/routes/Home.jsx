@@ -36,8 +36,6 @@ export function Home() {
       .then((response) => setNeosList(response))
       .catch(() => window.alert('Não foi possível buscar as informações :(. Tente mais tarde.'))
       .finally(() => setIsLoading(false));
-    
-
   }
 
   return (

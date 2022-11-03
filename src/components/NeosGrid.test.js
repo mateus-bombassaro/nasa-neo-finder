@@ -1,4 +1,4 @@
-import TestRenderer from 'react-test-renderer';
+import TestRenderer, { act } from 'react-test-renderer';
 import { NeosGrid } from './NeosGrid';
 import { Text } from './Text';
 
@@ -42,7 +42,7 @@ const getNeosDay = () => '2022-10-29';
 describe('NeosGrid', () => {
   test('should render date', () => {
     const testRenderer = TestRenderer.create(
-      <NeosGrid neosDate={getNeosDay()} neosByDayList={getNeosByDay()} />
+      <NeosGrid neosDay={getNeosDay()} neosByDayList={getNeosByDay()} />
     );
 
     const testInstance = testRenderer.root;
@@ -52,7 +52,7 @@ describe('NeosGrid', () => {
 
   test('should render neos', () => {
     const testRenderer = TestRenderer.create(
-      <NeosGrid neosDate={getNeosDay()} neosByDayList={getNeosByDay()} />
+      <NeosGrid neosDay={getNeosDay()} neosByDayList={getNeosByDay()} />
     );
 
     const testInstance = testRenderer.root;
@@ -62,7 +62,7 @@ describe('NeosGrid', () => {
 
   test('should render neo diameter', () => {
     const testRenderer = TestRenderer.create(
-      <NeosGrid neosDate={getNeosDay()} neosByDayList={getNeosByDay()} />
+      <NeosGrid neosDay={getNeosDay()} neosByDayList={getNeosByDay()} />
     );
 
     const testInstance = testRenderer.root;
@@ -75,7 +75,7 @@ describe('NeosGrid', () => {
 
   test('should render if neo is potentially danger', () => {
     const testRenderer = TestRenderer.create(
-      <NeosGrid neosDate={getNeosDay()} neosByDayList={getNeosByDay()} />
+      <NeosGrid neosDay={getNeosDay()} neosByDayList={getNeosByDay()} />
     );
 
     const testInstance = testRenderer.root;
@@ -88,7 +88,7 @@ describe('NeosGrid', () => {
 
   test('should render if neo is sentry object', () => {
     const testRenderer = TestRenderer.create(
-      <NeosGrid neosDate={getNeosDay()} neosByDayList={getNeosByDay()} />
+      <NeosGrid neosDay={getNeosDay()} neosByDayList={getNeosByDay()} />
     );
 
     const testInstance = testRenderer.root;
@@ -101,7 +101,7 @@ describe('NeosGrid', () => {
 
   test('should render neo link', () => {
     const testRenderer = TestRenderer.create(
-      <NeosGrid neosDate={getNeosDay()} neosByDayList={getNeosByDay()} />
+      <NeosGrid neosDay={getNeosDay()} neosByDayList={getNeosByDay()} />
     );
 
     const testInstance = testRenderer.root;

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getNasaList } from './nasaApi';
+import { getNasaList, getNeo } from './nasaApi';
 
 const getInitialDate = () => '2022-10-29';
 const getFinalDate = () => '2022-10-30';
@@ -21,5 +21,12 @@ describe('nasaApi', () => {
     const result = await getNasaList(getInitialDate(), getFinalDate());
 
     expect(result).toEqual('dummy api data');
+  })
+
+  it('should retrieve neo 2465633 data', async () => {
+    axios.get.mockResolvedValue({ data: { neo2465633: 'especific neo data' } });
+    const result = await getNeo();
+
+    expect(result).toEqual({ neo2465633: 'especific neo data' });
   })
 });

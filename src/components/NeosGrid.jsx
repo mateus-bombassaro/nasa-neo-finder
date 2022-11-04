@@ -1,5 +1,5 @@
 import { Heading } from '../components/Heading';
-import { getFormattedDate } from '../services/dateService';
+import { getFormattedDate, getFullDate } from '../services/dateService';
 import { Text } from '../components/Text';
 
 export function NeosGrid({ neosByDayList, neosDay }) {
@@ -21,7 +21,7 @@ export function NeosGrid({ neosByDayList, neosDay }) {
   }
 
   function onClickNeo(neo) {
-    window.alert(`Você clickou no NEO: ${neo.name}`)
+    window.alert(`Você clickou no NEO: ${neo.name}. Colisão prevista para ${getFullDate(neo.close_approach_data[0]?.close_approach_date_full)}`)
   }
 
   return (

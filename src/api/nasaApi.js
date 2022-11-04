@@ -9,3 +9,7 @@ export async function getNasaList(startDate, endDate) {
     .get(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=${getApiKey()}`)
     .then(({ data }) => data.near_earth_objects);
 }
+
+export async function getNeo() {
+  return axios.get(`https://api.nasa.gov/neo/rest/v1/neo/2465633?api_key=${getApiKey()}`).then(response => response.data);
+}

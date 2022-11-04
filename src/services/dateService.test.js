@@ -1,4 +1,4 @@
-import { getFormattedDate, getDateDiff } from './dateService';
+import { getFormattedDate, getDateDiff, getFullDate } from './dateService';
 
 const getInitialDate = () => '2022-10-29';
 const getFinalDate = () => '2022-10-30';
@@ -15,4 +15,10 @@ describe('dateService', () => {
 
     expect(difference).toEqual(1);
   })
+
+  it('should format full date', () => {
+    const formattedFullDate = getFullDate(getInitialDate());
+
+    expect(formattedFullDate).toEqual('Sábado, 29 de outubro de 2022');
+  });
 });
